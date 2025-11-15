@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Details - BookHub</title>
+  <link rel="stylesheet" href="./output.css">
+</head>
+
+<body class="bg-purple-50 font-serif">
+
+  <div class="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg">
+
+    <div id="bookContainer" class="flex flex-col md:flex-row gap-10 items-center md:items-start">
+
+      <div class="mt-6">
+  <h2 class="text-2xl font-semibold text-purple-900 mb-3">Available At</h2>
+
+  <div class="space-y-5">
+
+    ${bookData.preview ? 
+      `<a href="${bookData.preview}" target="_blank" 
+        class="inline-block bg-purple-700 text-white px-5 py-2 rounded-lg w-[200px] h-[200px] hover:bg-purple-800">
+        📖 Read Preview
+      </a>` 
+    : ""}
+
+    ${bookData.infoLink ? 
+      `<a href="${bookData.infoLink}" target="_blank" 
+        class="inline-block bg-purple-600 text-white px-5 py-2 rounded-lg w-fit hover:bg-purple-700">
+        🔗 View on Google Books
+      </a>` 
+    : ""}
+  </div>
+</div>
+
+    </div>
+
+    <button onclick="history.back()" class="mb-5 px-4 py-2 bg-purple-700 text-white rounded-full hover:bg-purple-800 relative left-160 top-10">
+      ← Back
+    </button>
+
+  </div>
+
+  
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+  const book = JSON.parse(localStorage.getItem("selectedBook"));
+
+  if (!book) {
+    document.getElementById("bookContainer").innerHTML =
+      "<p>No book details available.</p>";
+    return;
+  }
+
+  // SAFETY FALLBACKS
+  const title = book.title || "No title available";
+  const authors = book.authors || "Unknown Author";
+  const published = book.published || "N/A";
+  const description = book.description || "No description available.";
+  const image = book.image || "/assets/default-book.png";
+
+  // PREVIEW LINK FALLBACKS
+  let preview = "";
+  if (book.preview && book.preview.trim() !== "") {
+      preview = book.preview;
+  } else if (book.infoLink) {
+      preview = book.infoLink; // fallback preview
+  }
+
+  // INFO LINK FALLBACKS
+  let infoLink = "";
+  if (book.infoLink && book.infoLink.trim() !== "") {
+      infoLink = book.infoLink;
+  }
+
+  document.getElementById("bookContainer").innerHTML = `
+    <img src="${image}" 
+         class="w-80 h-96 object-cover rounded-lg shadow-lg mx-auto">
+
+    <div class="flex-1">
+
+      <h1 class="text-4xl font-bold text-purple-900 mb-3">${title}</h1>
+
+      <p class="text-lg text-gray-700 mb-2">
+        <strong>Author:</strong> ${authors}
+      </p>
+
+      <p class="text-gray-700 mb-4">
+        <strong>Published:</strong> ${published}
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-6">
+        <strong>Description:</strong><br> 
+        ${description}
+      </p>
+
+      <h2 class="text-2xl font-semibold text-purple-900 mb-4">Available At</h2>
+
+      ${preview ? 
+        `<a href="${preview}" target="_blank"
+           class="inline-block bg-purple-700 text-white px-5 py-2 rounded-lg hover:bg-purple-800 mb-3">
+           📖 Read Preview
+        </a>` 
+        : `<p class="text-gray-500">Preview not available</p>`}
+
+      ${infoLink ? 
+        `<a href="${infoLink}" target="_blank"
+           class="inline-block bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700">
+           🔗 View on Google Books
+        </a>` 
+        : ``}
+
+    </div>
+  `;
+});
+</script>
+
+
+</script>
+
+
+
+
+</body>
+</html>

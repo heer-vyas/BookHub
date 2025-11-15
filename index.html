@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookHub - Discover Your Next Read</title>
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="./output.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+<section class="font-serif bg-purple-50 " id="home">
+  <!-- ================= HEADER ================= -->
+  <section class="w-full">
+        <header class="w-full h-[72px] flex justify-between items-center bg-white shadow-md">
+            <aside class="w-[20%] h-full flex  items-center gap-2 relative left-10">
+            <img src="/assets/logo.png" alt="" class="w-[60px] hover:scale-110">
+            <span class="text-4xl font-bold hover:scale-110 transition-all ease-linear duration-100 text-purple-950">BookHub</span>
+            </aside>
+                <nav class="w-[50%] flex justify-evenly gap-10">
+                <a href="#home" class="text-purple-700 font-medium hover:text-purple-900">Home</a>
+                <a href="#popularBooks" class="text-[#5D6B85] font-medium hover:text-purple-900">Books</a>
+                <a href="#about" class="text-[#5D6B85] font-medium hover:text-purple-900">About Us</a>
+                <a href="#contact" class="text-[#5D6B85] font-medium hover:text-purple-900">Contact</a>
+                </nav>
+                <!-- <button class=" px-6 py-2 bg-purple-800 text-lg rounded-full text-white font-semibold ml-10 mr-10">Sign in/Log in</button> -->
+        </header>
+    </section>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="w-[95%] h-[600px] mx-auto my-7 rounded-xl flex bg-white shadow-lg">
+    <!-- Left Side -->
+    <aside class="w-[50%] h-full flex justify-center items-center">
+      <img src="/assets/books-removebg-preview.png" class="w-[400px] rounded-lg" alt="Books Illustration">
+    </aside>
+
+    <!-- Right Side -->
+    <aside class="w-[50%] h-full flex flex-col justify-center pr-10">
+      <p class="text-6xl font-bold text-black leading-tight">Discover Your Next Favorite Book</p>
+      <p class="mt-5 text-gray-700 text-lg">Dive into the world of stories, one search at a time.<br>
+        From timeless classics to trending reads — everything is here.<br>
+        Let your curiosity guide you through endless pages of imagination.
+      </p>
+      <div class="flex mt-8 items-center">
+        <input
+          id="searchInput"
+          type="text"
+          class="border border-purple-300 w-[300px] h-[45px] rounded pl-5 outline-none shadow-md focus:border-purple-500 transition"
+          placeholder="Search for your books..."
+        >
+        <span id="searchBtn" class="ml-[-35px] text-gray-600 cursor-pointer hover:text-purple-700 transition">
+          <i class="fa-sharp fa-solid fa-magnifying-glass text-lg"></i>
+        </span>
+      </div>
+    </aside>
+  </section>
+
+
+  <!-- ================= SEARCH RESULTS SECTION (Hidden Initially) ================= -->
+  <section id="searchSection" class="w-[90%] mx-auto mt-10 hidden">
+    <h2 class="text-3xl font-semibold text-purple-900 mb-6">Search Results</h2>
+    <div id="results" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+  </section>
+
+ 
+  <!-- ================= POPULAR PICKS SECTION ================= -->
+  <section class="w-full py-10 bg-purple-50 mt-10">
+       <!-- Example Books Display -->
+    <section id="popularBooks" class="w-[90%] mx-auto mt-10">
+    <h2 class="text-3xl font-semibold text-purple-900 mb-6 text-center">Popular Picks</h2>
+
+     <!-- JS WILL INJECT CARDS HERE -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+    </section>
+    </section>
+
+
+    </div>
+  </section>
+
+   <!-- ================= ABOUT US SECTION ================= -->
+<section id="about" class="w-[90%] mx-auto mt-20 py-16 bg-linear-to-r from-purple-50 to-purple-100 rounded-2xl shadow-md">
+  <div class="h-[350px] flex flex-col md:flex-row items-center justify-between gap-10 px-8">
+
+    <!-- Left Side (Image) -->
+    <div class="w-[50%]">
+      <img src="/assets/istockphoto-1816951323-612x612-removebg-preview.png" alt="About BookHub" class="w-[400px] h-[300px] pl-20 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 content-center-safe">
+    </div>
+
+    <!-- Right Side (Text) -->
+    <div class="w-[50%] text-center md:text-left">
+      <h2 class="text-4xl font-bold text-purple-900 mb-4">About <span class="text-purple-900">BookHub</span></h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        BookHub is your personalized book discovery platform — connecting you to millions of titles
+        from around the world. Whether you're a casual reader, a student, or a passionate bookworm,
+        we make it easy to find your next favorite read.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-6">
+        From timeless classics to trending bestsellers, our mission is to inspire a lifelong love for
+        reading. Explore genres, authors, and stories that spark your imagination — all in one place.
+      </p>
+      <button class="bg-purple-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition">
+        Learn More
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT US SECTION ================= -->
+<section id="contact" class="w-[90%] mx-auto mt-20 py-16 bg-white rounded-2xl shadow-lg">
+  <h2 class="text-4xl font-bold text-center text-purple-900 mb-4">Contact <span class="text-purple-900">Us</span></h2>
+  <p class="text-center text-gray-600 mb-10">We’d love to hear from you! Whether you have a question, feedback, or just want to say hello — drop us a message below.</p>
+
+  <div class="flex flex-col md:flex-row justify-between items-center gap-10 px-8">
+    <!-- Contact Form -->
+    <form id="contactForm" class="md:w-1/2 w-full bg-purple-50 p-8 rounded-lg shadow-inner">
+      <div class="mb-5">
+        <label for="name" class="block text-gray-700 font-semibold mb-2">Your Name</label>
+        <input type="text" id="name" class="w-full border border-purple-300 rounded-md p-3 outline-none focus:border-purple-600 focus:ring-1 focus:ring-purple-500 transition" placeholder="Enter your name">
+      </div>
+      <div class="mb-5">
+        <label for="email" class="block text-gray-700 font-semibold mb-2">Your Email</label>
+        <input type="email" id="email" class="w-full border border-purple-300 rounded-md p-3 outline-none focus:border-purple-600 focus:ring-1 focus:ring-purple-500 transition" placeholder="Enter your email">
+      </div>
+      <div class="mb-5">
+        <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+        <textarea id="message" rows="4" class="w-full border border-purple-300 rounded-md p-3 outline-none focus:border-purple-600 focus:ring-1 focus:ring-purple-500 transition" placeholder="Write your message..."></textarea>
+      </div>
+      <button type="submit" class="bg-purple-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition w-full">Send Message</button>
+    </form>
+
+    <!-- Contact Info -->
+    <div class="md:w-1/2 text-center md:text-left">
+      <h3 class="text-2xl font-semibold text-purple-900 mb-4">Get in Touch</h3>
+      <p class="text-gray-700 mb-4">📍 Ahmedabad, India</p>
+      <p class="text-gray-700 mb-4">📧 support@bookhub.com</p>
+      <p class="text-gray-700 mb-6">📞 +91 98765 43210</p>
+
+      <div class="flex justify-center md:justify-start gap-6 text-2xl text-purple-800">
+        <a href="#" class="hover:text-purple-600"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-purple-600"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="hover:text-purple-600"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-purple-900 text-white mt-20 py-10">
+  <div class="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <div>
+      <h3 class="text-2xl font-bold mb-3">BookHub</h3>
+      <p class="text-gray-300">
+        Discover your next favorite book.  
+        Explore stories, authors, and genres from around the world.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li><a href="#popularBooks" class="hover:text-white transition">Popular Books</a></li>
+        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+        <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-3">Follow Us</h3>
+      <div class="flex gap-5 text-2xl">
+        <a href="#" class="hover:text-purple-300"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-purple-300"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="hover:text-purple-300"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="text-center text-gray-400 mt-10">© 2025 BookHub. All Rights Reserved.</p>
+</footer>
+</section>
+
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script src="./index.js"></script>
+</body>
+</html>
